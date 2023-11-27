@@ -1,6 +1,6 @@
 #include "StructuredLight.h"
 
-void StructuredLight::SetInput(const cv::Mat& img_bright, const cv::Mat& img_dark,
+void GrayPhase::SetInput(const cv::Mat& img_bright, const cv::Mat& img_dark,
 	const std::vector<cv::Mat>& imgs_gray_code,
 	const std::vector<cv::Mat>& imgs_phase_shift)
 {
@@ -237,7 +237,7 @@ void UnWrappedPhase(cv::Mat& unwrapped_phase, const cv::Mat& wrapped_phase,
 	}
 }
 
-void StructuredLight::Compute()
+void GrayPhase::Compute()
 {
 	// Çó½âãÐÖµÍ¼
 	ThresholdMap(this->threshold_map, this->imgs_phase_shift_);

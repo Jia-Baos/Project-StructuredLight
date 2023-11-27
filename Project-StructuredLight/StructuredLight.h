@@ -24,6 +24,13 @@ const std::vector<std::string> gray_code_5bits
 class StructuredLight
 {
 public:
+	void Compute() {}
+	void SetInput() {}
+};
+
+class GrayPhase :public StructuredLight
+{
+public:
 	cv::Mat mask_map_;	// Mask图
 	cv::Mat threshold_map;	// 阈值图
 	cv::Mat wrapped_phase_;	// 包裹相位

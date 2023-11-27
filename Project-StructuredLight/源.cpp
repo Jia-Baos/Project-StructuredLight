@@ -4,14 +4,14 @@
 #include "StructuredLight.h"
 
 #ifdef _DEBUG
-#pragma comment(lib, "D:/opencv_contrib/opencv_contrib/x64/vc17/lib/opencv_world460d.lib")
+#pragma comment(lib, "D:/opencv_contrib/build/x64/vc17/lib/opencv_world460d.lib")
 #else
-#pragma comment(lib, "D:/opencv_contrib/opencv_contrib/x64/vc17/lib/opencv_world460.lib")
+#pragma comment(lib, "D:/opencv_contrib/build/x64/vc17/lib/opencv_world460.lib")
 #endif // _DEBUG
 
 int main(int argc, char* argv[])
 {
-	std::cout << CV_VERSION << std::endl;
+	std::cout << "OpenCV Version: " << CV_VERSION << std::endl;
 
 	std::string img_light_path = "D:/Code-VS/Project-StructuredLight/David/1.bmp";
 	std::string img_dark_path = "D:/Code-VS/Project-StructuredLight/David/2.bmp";
@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 	std::vector<cv::Mat> imgs_phase_shift = { img1_phase_shift, img2_phase_shift,
 		img3_phase_shift, img4_phase_shift };
 
-	StructuredLight* structured_light = new StructuredLight();
+	GrayPhase* structured_light = new GrayPhase();
 	structured_light->SetInput(img_light, img_dark,
 		imgs_gray_code, imgs_phase_shift);
 	structured_light->Compute();
